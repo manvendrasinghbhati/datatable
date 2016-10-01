@@ -1,0 +1,7 @@
+{
+  "data": [
+    ["1","om","kanwar","Assistant","Bikaner","2nd Jan 16"],
+	["2","manvendra","Singh","Developer","Jaipur","2nd Jan 16"]
+]
+     
+}

@@ -1,0 +1,61 @@
+
+<html>
+<head>
+<title>DataTable with link Develop by manvendra</title>
+<link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.12/css/jquery.dataTables.min.css">
+<script type="text/javascript" src="//code.jquery.com/jquery-1.12.3.js"></script>
+<script type="text/javascript" src="https://cdn.datatables.net/1.10.12/js/jquery.dataTables.min.js"></script>
+ 
+
+
+</head>
+<body>
+
+<table id="example" class="display" cellspacing="0" width="100%">
+            <thead>
+                <tr>
+				 <th>ID</th>
+                    <th>First Name</th>
+                    <th>Last Name</th>
+                    <th>Job Title</th>
+                    <th>City</th>
+                    <th>Receieved</th>
+                    <th>Action</th>
+					
+                </tr>
+            </thead>
+            <tfoot>
+                <tr>
+					<th>ID</th>                  
+					<th>First Name</th>
+                    <th>Last Name</th>
+                    <th>Job Title</th>
+                    <th>City</th>
+                    <th>Receieved</th>
+					<th>Action</th>
+					
+                </tr>
+            </tfoot>
+        </table>
+ </body>
+ <script>
+$(document).ready(function() {
+    var table =$('#example').DataTable( {
+        "processing": true,
+        "serverSide": true,
+        "ajax": "pull_2.txt",
+		"columnDefs": [ {
+            "targets": -1,
+            "data": null,
+            // The `data` parameter refers to the data for the cell (defined by the
+                // `data` option, which defaults to the column being worked with, in
+                // this case `data: 0`.
+                "render": function ( data, type, row ) {
+                    return "<a href='index.php?action=edit&id="+row[0]+"'>Edit!</a> | <a href='index.php?action=Del&id="+row[0]+"'>Del!</a>  <a href='index.php?action=new'>New!</a> ";
+                }
+			
+        } ]
+    } );
+} );
+</script>
+ </html>
